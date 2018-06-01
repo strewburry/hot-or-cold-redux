@@ -38,5 +38,14 @@ export const gameReducer = (state = initialState, action) => {
             guesses: [...state.guesses, guess]
         })
     }
+
+    if (action.type === actions.RESTART_GAME) {
+        return Object.assign({}, state, {
+            guesses: [],
+            feedback: 'Make your guess!',
+            auralStatus: '',
+            correctAnswer: Math.round(Math.random() * 100) + 1
+        })
+    }
     return state;
 }
