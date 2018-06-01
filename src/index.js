@@ -6,9 +6,10 @@ import './reset.css';
 import './index.css';
 
 import Game from './components/game';
+import store from './store';
 
 ReactDOM.render(
-  <Provider>
+  <Provider store={store}>
     <Game />
   </Provider>,
   document.getElementById('root')
